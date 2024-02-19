@@ -11,5 +11,6 @@ module.exports.builder = function(accessToken) {
     .withHost(DEFAULT_HOST)
     .withPort(DEFAULT_PORT)
     .withScheme(DEFAULT_SCHEME)
-    .withAuth(accessToken);
+    .withAuth(accessToken)
+    .withInternalApi(globalThis.SpotifyWebApiInternalConfig);
 };

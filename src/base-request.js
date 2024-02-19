@@ -132,6 +132,13 @@ Builder.prototype.withInternalApi = function(config) {
     var port = url.port;
     var path = url.pathname;
     var scheme = url.protocol.replace(':', '');
+    if (!port && scheme) {
+      if (scheme === 'http') {
+        port = 80;
+      } else if (scheme === 'https') {
+        port = 443;
+      }
+    }
 
     var that = that.withHost(host);
     that = that.withPort(port);
